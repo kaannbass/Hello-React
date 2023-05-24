@@ -23,7 +23,7 @@ const Home = () => {
           setBlogs(data);
           setPending(false);
         });
-    },2000);
+    }, 2000);
   }, []);
 
   return (
