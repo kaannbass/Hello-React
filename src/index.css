@@ -35,6 +35,7 @@ body {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+
 }
 
 .blog-preview {
@@ -45,7 +46,7 @@ body {
 
 .blog-preview:hover {
   cursor: default;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2) ;
 }
 
 
@@ -56,8 +57,14 @@ body {
   text-decoration: none;
 }
 
+:where(a:-webkit-any-link ){
+  text-decoration: none;
+  color: #24292E;
+}
+
 /*Button css */
-.button-4 {
+.myButton {
+  text-decoration: none;
   appearance: none;
   background-color: #FAFBFC;
   border: 1px solid rgba(27, 31, 35, 0.15);
@@ -83,33 +90,58 @@ body {
   word-wrap: break-word;
 }
 
-.button-4:hover {
+.myButton:hover {
   background-color: #F3F4F6;
   text-decoration: none;
   transition-duration: 0.1s;
 }
 
-.button-4:disabled {
+.myButton:disabled {
   background-color: #FAFBFC;
   border-color: rgba(27, 31, 35, 0.15);
   color: #959DA5;
   cursor: default;
 }
 
-.button-4:active {
+.myButton:active {
   background-color: #EDEFF2;
   box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
   transition: none 0s;
 }
 
-.button-4:focus {
+.myButton:focus {
   outline: 1px transparent;
 }
 
-.button-4:before {
+.myButton:before {
   display: none;
 }
 
-.button-4:-webkit-details-marker {
+.myButton::-webkit-details-marker {
   display: none;
+}
+
+/* Create New Blog Form */
+
+.create{
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label{
+  text-align: left;
+  display: block;
+}
+.create h1 {
+  font-size: 20px;
+  color:#f1356d;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select{
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 20px;
 }

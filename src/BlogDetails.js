@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import useFetch from "./useFetch";
 
 const blogDetails = () => {
@@ -8,6 +8,16 @@ const blogDetails = () => {
   const URL = "http://localhost:8000/";
   // eslint-disable-next-line react-hooks/rules-of-hooks, no-useless-concat
   const { data: blog, isPending, error } = useFetch(URL + "blogs/" + `${id}`);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const  history = useHistory();
+
+  const handleClick = ()=>{
+    fetch(URL+'blogs/'+blog.id,{
+      method:'DELETE'
+    }).then(()=>{
+      history.push('/')
+    })
+  }
   return (
     <div className="blog-details">
       {isPending && <div>Loading...</div>}
@@ -17,6 +27,7 @@ const blogDetails = () => {
           <h2>{blog.title}</h2>
           <p>Written by {blog.author}</p>
           <div>{blog.body}</div>
+          <button onClick={handleClick} className='myButton'>Delete</button>
         </article>
       )}
     </div>
