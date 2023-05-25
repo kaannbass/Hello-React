@@ -19,8 +19,8 @@ const useFetch = (url) => {
           setPending(false);
         })
         .catch((err) => {
-          setPending(false);
-          setError(err.message);
+            setPending(false);
+            setError(err.message);
         });
     }, 2000);
   }, [url]);

@@ -38,19 +38,22 @@ body {
 }
 
 .blog-preview {
-  padding: 10px 16px;
+  padding: 10px 10px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
 }
 
 .blog-preview:hover {
   cursor: default;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 
 .blog-preview h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
+  text-decoration: none;
 }
 
 /*Button css */
